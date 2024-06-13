@@ -105,6 +105,7 @@ and only the most severe ones continue for longer than a few hours or days.
   width="800"
   height="600"
   frameborder="0"
+  style="margin-bottom: -10px;"
 ></iframe>
 Then I wanted to see if there was any clear association between the duration of 
 the outage and the anomaly level. I plotted a scatter plot showing the relationship.
@@ -119,6 +120,7 @@ and 0.5.
   width="800"
   height="600"
   frameborder="0"
+  style="margin-bottom: -10px;"
 ></iframe>
 
 Next, lets look at the average outage duration for each climate region, categorized
@@ -256,20 +258,21 @@ I continued with the Random Forest Regressor, but I used a Grid Search CV to
 tune some hyperparameters. The following are the hyperparameters tuned, and the 
 options iterated through by GridSearchCV:
 
-- Max Depth' : [4, 5, 6, 7, 8, 9, 10],
-- Max Features': [3, 4, 5],
-- Minimum Samples Split': [3, 4, 5, 6]
+- Max Depth: [4, 5, 6, 7, 8, 9, 10],
+- Max Features: [3, 4, 5],
+- Minimum Samples Split: [3, 4, 5, 6]
 
 The results of the grid search that I used were the following:
 
-- Max Depth' : 8
-- Max Features': 4
-- Minimum Samples Split': 4
+- Max Depth: 8
+- Max Features: 4
+- Minimum Samples Split: 4
 
 #### Results
 
 My model improved significantly. It's r-squared improved to a positive 0.41, with
 an RMSE of 2779. 
+
 |       |    RMSE |   r Squared |
 |:------|--------:|------------:|
 | Base  | 3741.54 |   -0.077984 |
