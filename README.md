@@ -75,15 +75,24 @@ of customers experienced a long outage.
 
 The dataset contained suprisinglfy few missing values in our columns of interest.
 In obervations that did have missing data, often many of our columns were missing. 
-Therefore, I made the decision to drop columns that were missing our relevant data.
+We will ignore the missing values for now. Below is the first few rows of the dataset:
+
+|   MONTH | CLIMATE.REGION     | CAUSE.CATEGORY.DETAIL   | OUTAGE.START.PERIOD   |   ANOMALY.LEVEL |   CUSTOMERS.AFFECTED |   OUTAGE.DURATION |   DEMAND.LOSS.MW |
+|--------:|:-------------------|:------------------------|:----------------------|----------------:|---------------------:|------------------:|-----------------:|
+|       6 | East North Central | thunderstorm            | Morning               |             0.2 |               300000 |              3960 |               75 |
+|       3 | East North Central | sabotage                | Morning               |             0.6 |                 5941 |               155 |               20 |
+|       7 | East North Central | vandalism               | Morning               |            -0.3 |                    0 |                 0 |                0 |
+|       5 | East North Central | vandalism               | Afternoon             |            -0.4 |                    0 |              1322 |                0 |
+|       5 | Central            | vandalism               | Night                 |             0.8 |                  215 |                95 |                1 |
 
 #### Exploratory Analysis
 
-To get an idea of te typical outage duration, i plotted the distribution with 
+To get an idea of the typical outage duration, I plotted the distribution with 
 a histogram. As you can see, the outage duration follow a roughly exponential 
 distribution, with most outages being very short, and progressively fewer of longer
 duration. This is as expected. Most utility companies fix outages immediately, 
 and only the most severe ones continue for longer than a few hours or days.
+
 
 <iframe
   src="Assets/Outage Duration Distribution.html"
@@ -91,13 +100,13 @@ and only the most severe ones continue for longer than a few hours or days.
   height="600"
   frameborder="0"
 ></iframe>
-
 Then I wanted to see if there was any clear association between the duration of 
 the outage and the anomaly level. I plotted a scatter plot showing the relationship.
 There were a few outliers above 35000 minutes which I ommitted in order to better
 see the majority of the data. We can see that the more extreme outages tend to
 happen when the Anomaly Level is in the 'normal' Climate Category between -0.5
-and 0.5
+and 0.5.
+
 
 <iframe
   src="Assets/Duration vs Level.html"
