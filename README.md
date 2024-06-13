@@ -102,11 +102,11 @@ and only the most severe ones continue for longer than a few hours or days.
 
 <iframe
   src="Assets/Outage Duration Distribution.html"
-  width="800"
-  height="600"
+  width="600"
+  height="450"
   frameborder="0"
-  style="margin-bottom: -10px;"
 ></iframe>
+
 Then I wanted to see if there was any clear association between the duration of 
 the outage and the anomaly level. I plotted a scatter plot showing the relationship.
 There were a few outliers above 35000 minutes which I ommitted in order to better
@@ -114,13 +114,11 @@ see the majority of the data. We can see that the more extreme outages tend to
 happen when the Anomaly Level is in the 'normal' Climate Category between -0.5
 and 0.5.
 
-
 <iframe
   src="Assets/Duration vs Level.html"
-  width="800"
-  height="600"
+  width="600"
+  height="450"
   frameborder="0"
-  style="margin-bottom: -10px;"
 ></iframe>
 
 Next, lets look at the average outage duration for each climate region, categorized
