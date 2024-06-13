@@ -260,14 +260,20 @@ options iterated through by GridSearchCV:
 - Max Features': [3, 4, 5],
 - Minimum Samples Split': [3, 4, 5, 6]
 
+The results of the grid search that I used were the following:
+
+- Max Depth' : 8
+- Max Features': 4
+- Minimum Samples Split': 4
+
 #### Results
 
 My model improved significantly. It's r-squared improved to a positive 0.41, with
-an RMSE of 2779. While the improvement is significant, it's still not a particularly
-useful model. An r-squared of 0.41 is rather low, and the RMSE of 2779 means
-that we are off by an average of 2779 minutes in our predictions, or 46 hours. 
-Further feature selection and engineering is required for this model to be of 
-practical use.
+an RMSE of 2779. 
+|       |    RMSE |   r Squared |
+|:------|--------:|------------:|
+| Base  | 3741.54 |   -0.077984 |
+| Final | 2778.78 |    0.405406 |
 
 ## Fairness Analysis
 
@@ -277,10 +283,13 @@ permutation test and the fullowing hypothesis.
 Null: There is no difference in the RMSE of my model across climate regions.
 Alternative: There is a difference in the RMSE of my model across climate regions. 
 
-Below is the RMSE of my model by climate region.
+Below is the RMSE of my model by climate region. It seems that the Southwest Region
+is significantly different than the rest, but we'll check if it's due to randomness
+or not with the test.
+
 |                    |     RMSE |
 |:-------------------|---------:|
-| Southwest          |  622.906 |
+| Southwest          |  622.90 |
 | Northeast          | 1521.67  |
 | Northwest          | 1657.27  |
 | West North Central | 2080.29  |
@@ -290,5 +299,16 @@ Below is the RMSE of my model by climate region.
 | South              | 4104.96  |
 | East North Central | 6409.97  |
 
+As a test statistic, I'll use the RMSE. To be clear, this the the RMSE of the above
+table; the RMSE of the RMSE's for each climate category. RMSE is an apporpriate
+test statistic here, it is just by chance that I am using RMSE as the evaluation
+metric of the model. 
 
+Under the null hypothesis, the test statistic will be small, so we will reject for 
+large value of the test statistic. I obtained a p value of 0.1654 by permutation.
+Therefore, it seems that our model is fair across all climate categories.
 
+#### Final Thoughts
+
+While the improvement of the final model over the base model is significant, it's still not a particularlyuseful model. An r-squared of 0.41 is rather low, and the RMSE of 2779 meansthat we are off by an average of 2779 minutes in our predictions, or 46 hours. 
+Ideally, this model could be used utitlity provideds in climate regions to estimate the rough duration of outages. However, at it's current performance, it's not vapable of doing this. Further feature selection and engineering is required for this model to be of practical use. 
