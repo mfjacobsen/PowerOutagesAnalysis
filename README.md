@@ -1,4 +1,4 @@
-# PowerOutagesAnalysis
+# Power Outages Analysis
 
 By: Matthew Jacobsen
 
