@@ -4,7 +4,7 @@ By: Matthew Jacobsen
 
 ## Introduction
 
-This anlyisis will attempt to predict power outage severity in the USA from macro climate trends using random forest regression. Data is from the USA collected between 2000 and 2016. It is available here:
+This anlyisis will attempt to predict power outage severity in the USA from macro-climate trends using random forest regression. Data is from the USA collected between 2000 and 2016. It is available here:
 
 https://engineering.purdue.edu/LASCI/research-data/outages
 
@@ -311,4 +311,4 @@ Therefore, it seems that our model is fair across all climate categories.
 
 #### Final Thoughts
 
-While the improvement of the final model over the base model is significant, it's still not a particularlyuseful model. An r-squared of 0.41 is rather low, and the RMSE of 2779 meansthat we are off by an average of 2779 minutes in our predictions, or 46 hours. Ideally, this model could be used utitlity provideds in climate regions to estimate the rough duration of outages. However, at it's current performance, it's not vapable of doing this. Further feature selection and engineering is required for this model to be of practical use. 
+While the improvement of the final model over the base model is significant, it's still not a particularly useful model. If anything, this analysis has shown that El Nino/ La Nino events aren't good predictors of power outage severity. An r-squared of 0.41 is rather low, and the RMSE of 2779 means that we are off by an average of 2779 minutes in our predictions, or 46 hours. Ideally, this model could be used by utitlity providers in different climate regions for resource management planning. However, at it's current performance, it's not capable of doing this. Further feature selection and engineering and more data is required for this model to become practical.
