@@ -4,7 +4,7 @@ By: Matthew Jacobsen
 
 ## Introduction
 
-This report will analyze power outage data in the US collected between 2000 and 2016. It 
+This anlyisis will attempt to predect power outage severity in the USA using macro climate trends. Data is from the USA collected between 2000 and 2016. It 
 is available here:
 
 https://engineering.purdue.edu/LASCI/research-data/outages
