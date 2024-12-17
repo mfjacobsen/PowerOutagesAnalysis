@@ -4,8 +4,7 @@ By: Matthew Jacobsen
 
 ## Introduction
 
-This anlyisis will attempt to predect power outage severity in the USA using macro climate trends. Data is from the USA collected between 2000 and 2016. It 
-is available here:
+This anlyisis will attempt to predict power outage severity in the USA from macro climate trends using random forest regression. Data is from the USA collected between 2000 and 2016. It is available here:
 
 https://engineering.purdue.edu/LASCI/research-data/outages
 
